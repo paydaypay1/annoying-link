@@ -1,12 +1,13 @@
 {
-  "name": "my-static-site",
+  "name": "annoying-link",
   "private": true,
   "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "start": "npm run build"
   },
   "dependencies": {
     "react": "^18.3.1",
