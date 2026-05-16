@@ -40,7 +40,7 @@ export default function Home() {
         <div className="hero-inner" ref={heroRef}>
           <p className="hero-eyebrow">
             <span className="eyebrow-dot" />
-            Open Source · Community Driven
+            Creative Development · Connectivity Driven
           </p>
 
           <h1 className="hero-title">
@@ -49,7 +49,7 @@ export default function Home() {
           </h1>
 
           <p className="hero-sub">
-            A collective of makers, thinkers, and builders working on open tools
+            A place for of making, thinking, and building tools
             for a better world. Every contribution pushes us forward.
           </p>
 
@@ -66,7 +66,7 @@ export default function Home() {
       </section>
 
       {/* Stats bar */}
-      <section className="stats-bar">
+      {/*<section className="stats-bar">
         {[
           { value: '12k+', label: 'Contributors' },
           { value: '$840k', label: 'Raised to date' },
@@ -78,30 +78,26 @@ export default function Home() {
             <span className="stat-label">{s.label}</span>
           </div>
         ))}
-      </section>
+      </section>*/}
 
       {/* About section */}
       <section className="about" id="about">
         <div className="about-grid">
           <div className="about-text">
-            <h2 className="section-title">Built by the community,<br />for the community.</h2>
+            <h2 className="section-title">Building for better connectivity.</h2>
             <p>
-              Luminary is a nonprofit initiative that funds open-source
-              infrastructure, educational tools, and research in underserved areas.
-              We operate on radical transparency — every dollar is tracked publicly.
+              Always working for more trustworthy information systems do reduce confusion.
             </p>
             <p>
-              Our model is simple: small, recurring contributions from many people
-              create large, sustained impact for projects that corporations won't fund.
+              Our model is simple: small, contributions to sustain creative concept creation.
             </p>
             <Link to="/donate" className="btn btn-outline">Become a supporter →</Link>
           </div>
 
           <div className="about-cards">
             {[
-              { icon: '⬡', title: 'Open Infrastructure', body: 'We build and maintain the invisible layer that thousands of projects rely on.' },
-              { icon: '◎', title: 'Radical Transparency', body: 'Every grant, expense, and decision is published in real-time on our public ledger.' },
-              { icon: '✦', title: 'Global Reach', body: 'From Lagos to Lahore, our projects reach developers in 47 countries.' },
+              { icon: '⬡', title: 'Open Infrastructure', body: 'We build and maintain some of the invisible layers that thousands of projects rely on.' },
+              { icon: '◎', title: 'Creative Innovation', body: 'Always seeking different perespectives to assess future goals. '}
             ].map(c => (
               <div className="about-card" key={c.title}>
                 <span className="card-icon">{c.icon}</span>
@@ -115,7 +111,7 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="footer">
-        <span className="footer-logo">◈ Luminary</span>
+        <span className="footer-logo">◈ Annoying Link</span>
         <span className="footer-copy">© {new Date().getFullYear()} · Built with intention</span>
         <Link to="/donate" className="footer-cta">Donate →</Link>
       </footer>

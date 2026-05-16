@@ -34,7 +34,7 @@ const TIERS = [
 export default function Donate() {
   const [selectedTier, setSelectedTier] = useState('grove')
   const [customAmount, setCustomAmount] = useState('')
-  const [frequency, setFrequency] = useState<'monthly' | 'once'>('monthly')
+  const [frequency, setFrequency] = useState<'monthly' | 'once'>('once')
   const [submitted, setSubmitted] = useState(false)
 
   const activeTier = TIERS.find(t => t.id === selectedTier)
@@ -55,12 +55,13 @@ export default function Donate() {
           <div className="thankyou-icon">✦</div>
           <h1>Thank you.</h1>
           <p>
-            Your generosity keeps the lights on for projects that matter.
-            We'll be in touch at the email you provided.
+            Your generosity keeps the lights on.
           </p>
-          <button className="btn-reset" onClick={() => setSubmitted(false)}>
-            ← Make another donation
-          </button>
+          <a href="pay.annoyinglink.click">
+            <button className="btn-reset" onClick={() => setSubmitted(false)}>
+              ← Other payment methods...
+            </button>
+          </a>
         </div>
       </div>
     )
@@ -74,11 +75,10 @@ export default function Donate() {
       <div className="donate-layout">
         {/* Left: tiers */}
         <div className="tiers-col">
-          <p className="donate-eyebrow">Support Luminary</p>
+          <p className="donate-eyebrow">Support the Site</p>
           <h1 className="donate-title">Every dollar<br />builds the future.</h1>
           <p className="donate-sub">
-            Your contribution funds open-source tools, grants for indie developers,
-            and infrastructure that the whole community depends on.
+            Your contributions are greatly appreciated. 
           </p>
 
           <div className="tiers">
