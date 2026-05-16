@@ -1,6 +1,6 @@
-# My Static Site
+# Annoying Link
 
-React + TypeScript static website, built with Vite. Deployable to any virtual server (VPS) via nginx.
+React + TypeScript static website, built with Vite. Deployable to any virtual server (VPS).
 
 ## Tech Stack
 
@@ -31,47 +31,6 @@ Output goes to `dist/`. Preview it locally with:
 
 ```bash
 npm run preview
-```
-
-## Deploy to Virtual Server (nginx)
-
-### 1. Build
-
-```bash
-npm run build
-```
-
-### 2. Upload dist/ to your server
-
-```bash
-rsync -avz dist/ user@your-server:/var/www/my-static-site/dist/
-```
-
-Or with scp:
-
-```bash
-scp -r dist/ user@your-server:/var/www/my-static-site/
-```
-
-### 3. Configure nginx
-
-Copy `nginx.conf` to your server and update:
-- `server_name` — your domain
-- `root` — path to your `dist/` folder
-- SSL cert paths (use [Certbot](https://certbot.eff.org/) for free Let's Encrypt certs)
-
-```bash
-sudo cp nginx.conf /etc/nginx/sites-available/my-static-site
-sudo ln -s /etc/nginx/sites-available/my-static-site /etc/nginx/sites-enabled/
-sudo nginx -t          # test config
-sudo systemctl reload nginx
-```
-
-### 4. (Optional) Get a free SSL certificate
-
-```bash
-sudo apt install certbot python3-certbot-nginx
-sudo certbot --nginx -d your-domain.com -d www.your-domain.com
 ```
 
 ## Project Structure
