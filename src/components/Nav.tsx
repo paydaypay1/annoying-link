@@ -6,7 +6,7 @@ export default function Nav() {
     <nav className="nav">
       <NavLink to="/" className="nav-logo">
         <span className="nav-logo-mark">◈</span>
-        <span>Luminary</span>
+        <span>Annoying Link</span>
       </NavLink>
       <div className="nav-links">
         <NavLink to="/" end className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>
