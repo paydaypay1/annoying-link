@@ -1,5 +1,4 @@
 import Header from './layout/Header'
-import Navigation from './layout/Navigation'
 import MainContent from './layout/MainContent'
 import Footer from './layout/Footer'
 import "./layout/Layout.css"
@@ -25,7 +24,6 @@ export default function App() {
     return (
       <div className="layout">
         <Header />
-        <Navigation />
         <MainContent />
         <Footer/>
       </div>

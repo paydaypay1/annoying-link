@@ -1,11 +1,16 @@
 - add simple animations to site
-- fix dinations
+-   link/button pulses
+-   show/hide fade
+-   brighten text on hover
+-   entrance animations on page load
+-   exit animations on navigate away?
+- fix donations
   - button associations
   - link generation
   - btc address
-- site settings
+- implement site settings
   - dark mode
   - extra animations
   - sound effects
-- hamburger navigation tree
 - reactive site background
+-   (on all pages except features)
