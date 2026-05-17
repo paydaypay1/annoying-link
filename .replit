@@ -23,3 +23,12 @@ args = "nodejs"
 [[workflows.workflow.tasks]]
 task = "shell.exec"
 args = "npm run build"
+
+[[workflows.workflow]]
+name = "Dev"
+mode = "sequential"
+author = 58938564
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "npm run watch"

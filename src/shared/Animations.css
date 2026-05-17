@@ -4,6 +4,11 @@
   to   { opacity: 1; transform: translateY(0); }
 }
 
+@keyframes fadeIn {
+  from { opacity: 0.2; }
+  to   { opacity: 1;  }
+}
+
 @keyframes pulse {
   0%, 100% { opacity: 1; transform: scale(1); }
   50%       { opacity: 0.5; transform: scale(0.7); }
@@ -16,9 +21,13 @@
 
 @keyframes grow {
   from { transform: scale(1); }
-  to   { transform: scale(1.15); }
+  to   { transform: scale(1.35); }
 }
 
+/*   Site-wide animations  */
+* {
+  animation: fadeIn 0.3s ease-in;
+}
 
 /*   Class-wide animations  */
 .btn {
