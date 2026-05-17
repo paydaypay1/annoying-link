@@ -1,7 +1,13 @@
+import { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import './Nav.css'
 
 export default function Nav() {
+  const [settingsOpen, setSettingsOpen] = useState(false)
+  const toggleSettings = () => {
+    setSettingsOpen(!settingsOpen)
+  }
+    
   return (
     <nav className="nav">
       <NavLink to="/" className="nav-logo">
@@ -9,11 +15,11 @@ export default function Nav() {
         <span>Annoying Link</span>
       </NavLink>
       <div className="nav-links">
-        <NavLink to="/" end className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>
-          Home
+        <NavLink to="/features" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>
+          Features
         </NavLink>
-        <NavLink to="/donate" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>
-          Donate
+        <NavLink to="#" onClick={toggleSettings} className={settingsOpen ? 'nav-link active' : 'nav-link'}>
+          Menu
         </NavLink>
       </div>
     </nav>

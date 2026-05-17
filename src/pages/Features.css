@@ -1,0 +1,36 @@
+.about-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.about-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.4rem 1.5rem;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.about-card:hover {
+  border-color: rgba(45,212,191,0.3);
+  transform: translateX(4px);
+}
+
+.card-icon {
+  display: inline-block;
+  font-size: 1.3rem;
+  color: var(--teal);
+  margin-bottom: 0.6rem;
+}
+.about-card h2 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+  letter-spacing: -0.01em;
+}
+.about-card p {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+  font-weight: 400;
+}

@@ -34,11 +34,13 @@ export default function Donate() {
   const displayAmount = customAmount
     ? `$${customAmount}`
     : `$${activeTier?.amount}`
+  const donationLink = "https://pay.annoyinglink.click/" + (customAmount
+      ? ''
+      : `donate-${activeTier?.amount}`)
 
   const handleSubmit = (e: React.MouseEvent) => {
     e.preventDefault()
     setSubmitted(true)
-    window.location.href = "
   }
 
   if (submitted) {
@@ -51,6 +53,9 @@ export default function Donate() {
           <p>
             Your generosity keeps the lights on.
           </p>
+          <button className="close-thank-you" onClick={() => setSubmitted(false)}>
+            Close
+          </button>
         </div>
       </div>
     )
@@ -62,7 +67,6 @@ export default function Donate() {
       <div className="donate-blob-cool" />
 
       <div className="donate-layout">
-        {/* Left: tiers */}
         <div className="tiers-col">
           <p className="donate-eyebrow">Support the Site</p>
           <h1 className="donate-title">Every dollar<br />helps build the future.</h1>
@@ -90,12 +94,9 @@ export default function Donate() {
           </div>
         </div>
 
-        {/* Right: checkout */}
         <div className="checkout-col">
           <div className="checkout-card">
             <h2 className="checkout-heading">Complete your donation</h2>
-
-            {/* Quick amounts */}
             <div className="quick-amounts">
               {AMOUNTS.map(amt => (
                 <button
@@ -127,11 +128,10 @@ export default function Donate() {
               <span className="summary-amount">{displayAmount}</span>
             </div>
 
-            <button className="donate-btn" onClick={handleSubmit}>
-              <span>Donate {displayAmount}</span>
-              <span className="donate-btn-icon">→</span>
-            </button>
-
+            <a href={donationLink} target="_blank" className="btn donate-btn" onClick={handleSubmit}>
+                <span>Donate {displayAmount}</span>
+                <span className="donate-btn-icon">→</span>
+            </a>
             <p className="checkout-note">
               🔒 Encrypted & secure through GoDaddy Payments®️
             </p>

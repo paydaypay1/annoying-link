@@ -1,0 +1,8 @@
+- add simple animations to site
+- fix dinations
+- site settings
+  - dark mode
+  - extra animations
+  - sound effects
+- link to github
+- hamburger navigation tree
