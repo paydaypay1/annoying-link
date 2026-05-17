@@ -9,6 +9,9 @@ channel = "stable-25_05"
 localPort = 3000
 externalPort = 80
 
+[[ports]]
+localPort = 5173
+
 [workflows]
 
 [[workflows.workflow]]
@@ -26,9 +29,18 @@ args = "npm run build"
 
 [[workflows.workflow]]
 name = "Dev"
-mode = "sequential"
+mode = "parallel"
 author = 58938564
 
 [[workflows.workflow.tasks]]
 task = "shell.exec"
 args = "npm run watch"
+
+[[workflows.workflow]]
+name = "Local"
+mode = "sequential"
+author = 58938564
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "npm run dev"
