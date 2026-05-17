@@ -12,7 +12,7 @@ export default defineConfig({
       output: {
         // Chunk vendor libraries separately for better caching
         manualChunks: {
-          vendor: ['react', 'react-dom'],
+          vendor: ['react', 'react-dom', 'express', 'compression'],
         },
       },
     },

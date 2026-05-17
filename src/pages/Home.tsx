@@ -96,7 +96,7 @@ export default function Home() {
 
           <div className="about-cards">
             {[
-              { icon: '⬡', title: 'Open Infrastructure', body: 'We build and maintain some of the invisible layers that thousands of projects rely on.' },
+              { icon: '⬡', title: 'Open Infrastructure', body: 'We build and maintain some of the invisible layers that many projects rely on.' },
               { icon: '◎', title: 'Creative Innovation', body: 'Always seeking different perespectives to assess future goals. '}
             ].map(c => (
               <div className="about-card" key={c.title}>
@@ -112,7 +112,7 @@ export default function Home() {
       {/* Footer */}
       <footer className="footer">
         <span className="footer-logo">◈ Annoying Link</span>
-        <span className="footer-copy">© {new Date().getFullYear()} · Built with intention</span>
+        <span className="footer-copy">© {new Date().getFullYear()} · Information and Trust</span>
         <Link to="/donate" className="footer-cta">Donate →</Link>
       </footer>
     </div>
