@@ -1,0 +1,26 @@
+/* ── Keyframes ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.5; transform: scale(0.7); }
+}
+
+@keyframes drift {
+  from { transform: translate(0, 0) scale(1); }
+  to   { transform: translate(160px, 140px) scale(1.1); }
+}
+
+@keyframes grow {
+  from { transform: scale(1); }
+  to   { transform: scale(1.15); }
+}
+
+
+/*   Class-wide animations  */
+.btn {
+  animation: grow 0.25s ease-in forwards;
+}

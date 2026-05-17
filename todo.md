@@ -1,8 +1,11 @@
 - add simple animations to site
 - fix dinations
+  - button associations
+  - link generation
+  - btc address
 - site settings
   - dark mode
   - extra animations
   - sound effects
-- link to github
 - hamburger navigation tree
+- reactive site background

@@ -1,22 +1,34 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import Nav from './components/Nav'
-import Home from './pages/Home'
-import Donate from './pages/Donate'
-import Features from './pages/Features'
-import WebDJ from './pages/features/WebDJ'
-import BrowserLab from './pages/features/BrowserLab'
+import Header from './layout/Header'
+import Navigation from './layout/Navigation'
+import MainContent from './layout/MainContent'
+import Footer from './layout/Footer'
+import "./layout/Layout.css"
+
+import './shared/CommonElements.css'
+import './shared/Animations.css'
+import 'animate.css'
+
+const featureRoutes = [
+  "/features/webdj",
+  "/features/browserlab"
+]
+const isMinimalView = (featureRoutes.includes(window.location.pathname))
 
 export default function App() {
-  return (
-    <BrowserRouter>
-      <Nav />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/donate" element={<Donate />} />
-        <Route path="/features" element={<Features />} />
-        <Route path="/features/webdj" element={<WebDJ />} />
-        <Route path="/features/browserlab" element={<BrowserLab />} />
-      </Routes>
-    </BrowserRouter>
-  )
+  if ( isMinimalView ){
+    return (
+      <div className="layout">
+        <MainContent/>
+      </div>
+    )
+  } else {  
+    return (
+      <div className="layout">
+        <Header />
+        <Navigation />
+        <MainContent />
+        <Footer/>
+      </div>
+    )
+  }
 }

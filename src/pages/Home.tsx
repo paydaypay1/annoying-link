@@ -44,8 +44,8 @@ export default function Home() {
           </p>
 
           <h1 className="hero-title">
-            <span className="hero-line">We build things</span>
-            <span className="hero-line accent">that matter.</span>
+            <span className="hero-line">We build</span>
+            <span className="hero-line accent">things.</span>
           </h1>
 
           <p className="hero-sub">
@@ -64,21 +64,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* Stats bar */}
-      {/*<section className="stats-bar">
-        {[
-          { value: '12k+', label: 'Contributors' },
-          { value: '$840k', label: 'Raised to date' },
-          { value: '200+', label: 'Projects funded' },
-          { value: '47', label: 'Countries reached' },
-        ].map(s => (
-          <div className="stat" key={s.label}>
-            <span className="stat-value">{s.value}</span>
-            <span className="stat-label">{s.label}</span>
-          </div>
-        ))}
-      </section>*/}
 
       {/* About section */}
       <section className="about" id="about">
@@ -108,13 +93,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="footer">
-        <span className="footer-logo">◈ Annoying Link</span>
-        <span className="footer-copy">© {new Date().getFullYear()} · Information and Trust</span>
-        <Link to="/donate" className="footer-cta">Donate →</Link>
-      </footer>
     </div>
   )
 }

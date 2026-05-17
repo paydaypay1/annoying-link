@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "start": "npm run build && node index.js"
+    "start": "npm run build && node index.js",
+    "watch": "vite build --watch"
   },
   "dependencies": {
     "animate.css": "^4.1.1",

@@ -8,3 +8,18 @@ channel = "stable-25_05"
 [[ports]]
 localPort = 3000
 externalPort = 80
+
+[workflows]
+
+[[workflows.workflow]]
+name = "Deploy"
+mode = "sequential"
+author = 58938564
+
+[[workflows.workflow.tasks]]
+task = "packager.installForLanguage"
+args = "nodejs"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "npm run build"

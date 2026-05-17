@@ -15,16 +15,17 @@ const featureList: FeatureItem[] = [
 
 export default function Features() {
   return (
-    <div className="blob blob-amber">
+    <div>
       <center><h1>Features</h1></center>
-   ::   <hr/>
+      <hr/>
       <div className="blob blob-teal">
-        <div className="about-cards">
+        <div className="cards">
           { featureList.map(feature => (
-            <div className="about-card" key={feature.name}>
+            <div className="card" key={feature.name}>
               <h2>{feature.name}</h2>
+              <span>Description: </span>
               <p>{feature.description}</p>
-              <Link to={feature.route} className="btn btn-outline flex">Open</Link>
+              <Link to={feature.route} className="btn btn-outline flex">Open →</Link>
             </div>
           ))}
         </div>
