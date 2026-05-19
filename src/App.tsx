@@ -7,8 +7,8 @@ import './shared/CommonElements.css'
 import './shared/Animations.css'
 import 'animate.css'
 
-import Globals from '../config/Globals.tsx'
-declare global globals = Globals()
+//import Globals from '../config/Globals.tsx'
+//declare global globals = Globals()
 
 const featureRoutes = [
   "/features/webdj",
