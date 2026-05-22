@@ -10,7 +10,7 @@ export default function Header() {
   return (
     <div>
     <div className="header">
-      <a href="/"><h2 className="logo">◈ {$imports.globals.siteTitle}</h2></a>
+      <a href="/"><h2 className="logo">◈ Annoying Link</h2></a>
       <button className="btn menu-toggle" onClick={toggleSettings}>
         Menu
       </button>
