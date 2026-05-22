@@ -17,7 +17,7 @@ const playClick = () => {
 function GlobalActivityListener() {
   useEffect(() => {
     const handleUserActivity = (event) => {
-      //console.log('User activity detected:', event.type)
+      console.log('User activity detected:', event.type)
       soundEffects && playClick()
       
       // if (event.type === 'keydown') {
