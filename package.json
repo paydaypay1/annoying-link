@@ -1,13 +1,13 @@
 {
   "name": "annoying-link",
   "private": true,
-  "version": "1.0.0",
+  "version": "1.4.6",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "start": "npx prisma migrate deploy && npm run build && node index.js",
+    "start": "npx prisma migrate dev && npm run build && node index.js",
     "watch": "vite build --watch"
   },
   "dependencies": {
