@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import * as THREE from "three";
 import { CONFIG } from "./config";
 import { useGyro } from "./useGyro";
@@ -8,6 +8,7 @@ import { createAtlas, drawTile } from "./atlas";
 export default function SphereViewer() {
   const ref = useRef<HTMLDivElement>(null);
   const { orientation, requestPermission } = useGyro();
+  const [files, setFiles] = useState<File[]>([]);
 
   useEffect(() => {
     if (!ref.current) return;
@@ -111,8 +112,7 @@ export default function SphereViewer() {
     // =========================
 
     const videoPool = new VideoPool(
-      ["/videos/video0.mp4", "/videos/video1.mp4", "/videos/video2.mp4"],
-      CONFIG.VIDEO_POOL_SIZE
+      files, CONFIG.VIDEO_POOL_SIZE
     );
 
     // =========================
@@ -233,16 +233,29 @@ export default function SphereViewer() {
     animate();
 
     return () => {
+      videoPool.dispose();
       ref.current?.removeChild(renderer.domElement);
     };
   }, [orientation]);
 
+
   return (
-    <>
-      <button onClick={requestPermission} style={{ position: "absolute", zIndex: 10 }}>
+    <div>
+      <button className="btn btn-outline" onClick={requestPermission} style={{ 
+position: "absolute", zIndex: 10 }}>
         Enable Gyro
       </button>
+      <div style={{ padding: 20 }}>
+        <h2>Select video files</h2> 
+        <input type="file" accept="video/*" multiple onChange={(e) => {
+            const selected = Array.from(e.target.files || []); 
+            if (selected.length > 0) {
+              setFiles(selected);
+            }
+          }}
+        />
+      </div>
       <div ref={ref} style={{ width: "100vw", height: "100vh" }} />
-    </>
-  );
+    </div>
+  )
 }
