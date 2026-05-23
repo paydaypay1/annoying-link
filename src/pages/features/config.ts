@@ -1,0 +1,13 @@
+export const CONFIG = {
+  TILE_X: 8,
+  TILE_Y: 4,
+  TILE_CAP: 32,
+
+  UPDATE_BATCH: 8,
+
+  VISIBILITY_DOT: 0.25,
+
+  ATLAS_TILE_SIZE: 256,
+
+  VIDEO_POOL_SIZE: 4,
+};
