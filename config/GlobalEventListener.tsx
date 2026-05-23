@@ -15,7 +15,7 @@ const playClick = () => {
 };
 
 function GlobalActivityListener() {
-  useEffect(() => {
+  /*useEffect(() => {
     const handleUserActivity = (event) => {
       console.log('User activity detected:', event.type)
       soundEffects && playClick()
@@ -35,7 +35,7 @@ function GlobalActivityListener() {
       window.removeEventListener('mousedown', handleUserActivity);
       window.removeEventListener('mousemove', handleUserActivity);
     };
-  }, []);
+  }, []);*/
 
   return null;
 }
