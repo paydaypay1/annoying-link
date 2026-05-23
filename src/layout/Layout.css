@@ -104,6 +104,25 @@
 .footer-cta:hover { opacity: 0.7; }
 
 
+.privacy-policy {
+  position: fixed;
+  top: 5%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  height: 90%;
+  z-index: 10000;
+  backdrop-filter: blur(50px);
+  -webkit-backdrop-filter: blur(50px);
+  background: rgba(7, 8, 15, 0.95);
+  color: var(--text);
+  padding: 2rem;
+  overflow-y: scroll;
+  overflow-x: wrap;
+  border-radius: 25px;
+  animation: fadeIn 1s ease-in;
+}
+
 /* ── Responsive ── */
 @media (max-width: 768px) {
   .footer { flex-direction: column; gap: 0.5rem; }

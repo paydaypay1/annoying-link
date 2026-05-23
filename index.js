@@ -2,6 +2,17 @@ import express from 'express';
 import compression from 'compression';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import crypto from 'crypto';
+import prisma from './config/db.tsx';
+import ipCountry from 'ip-country';
+
+function hash(str) {
+	return crypto.createHash('md5').update(str).digest('hex');
+}	
+
+ipCountry.init({
+	exposeInfo: false,
+})
 
 // Recreate __filename and __dirname
 const __filename = fileURLToPath(import.meta.url);
@@ -21,8 +32,15 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'dist')));
 
 // Routing passthrough to React Router
-app.get(/.*$/, (req, res) => { 
-	res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+app.get(/.*$/, async (req, res) => { 
+	await		prisma().user_activity.create({
+		data: {
+			request_url: req.originalUrl,
+			anon_ip: hash(req.ip),
+			country: ipCountry.country(req.ip)
+		},
+	});
+		res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
 
 // Error Handling Middleware

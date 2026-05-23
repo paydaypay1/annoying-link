@@ -13,28 +13,28 @@ externalPort = 80
 localPort = 5173
 
 [workflows]
+runButton = "Dev"
 
 [[workflows.workflow]]
-name = "Deploy"
+name = "Dev"
 mode = "sequential"
 author = 58938564
 
 [[workflows.workflow.tasks]]
-task = "packager.installForLanguage"
-args = "nodejs"
+task = "workflow.run"
+args = "Migrate Dev"
 
 [[workflows.workflow.tasks]]
 task = "shell.exec"
-args = "npm run build"
-
-[[workflows.workflow]]
-name = "Dev"
-mode = "parallel"
-author = 58938564
+args = "npx prisma generate client"
 
 [[workflows.workflow.tasks]]
-task = "shell.exec"
-args = "npm run watch"
+task = "workflow.run"
+args = "Vite Build"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "Local"
 
 [[workflows.workflow]]
 name = "Local"
@@ -43,4 +43,48 @@ author = 58938564
 
 [[workflows.workflow.tasks]]
 task = "shell.exec"
-args = "npm run dev"
+args = "npx tsx index.js"
+
+[[workflows.workflow]]
+name = "Migrate Dev"
+mode = "sequential"
+author = 58938564
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "npx prisma migrate dev"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "npx prisma generate client"
+
+[[workflows.workflow]]
+name = "Vite Build"
+mode = "sequential"
+author = 58938564
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "tsc"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "vite build"
+
+[[workflows.workflow]]
+name = "Install"
+mode = "sequential"
+author = 58938564
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "npm install @fontsource/roboto @mui/icons-material"
+
+[[workflows.workflow]]
+name = "Build For Deployment"
+mode = "sequential"
+author = 58938564
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "npm run build"

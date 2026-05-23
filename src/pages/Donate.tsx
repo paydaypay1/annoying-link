@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import './Donate.css'
 
+var donationLink = "https://pay.annoyinglink.click/"
+
 const AMOUNTS = [1, 5, 10, 20, 50]
 
 const TIERS = [
@@ -34,12 +36,13 @@ export default function Donate() {
   const displayAmount = customAmount
     ? `$${customAmount}`
     : `$${activeTier?.amount}`
-  const donationLink = "https://pay.annoyinglink.click/" + (customAmount
+  donationLink = "https://pay.annoyinglink.click/" + (customAmount
       ? ''
       : `donate-${activeTier?.amount}`)
 
   const handleSubmit = (e: React.MouseEvent) => {
     e.preventDefault()
+    window.location.href = donationLink
     setSubmitted(true)
   }
 
@@ -105,8 +108,13 @@ export default function Donate() {
                   onClick={() => {
                     setCustomAmount('')
                     const match = TIERS.find(t => t.amount === amt)
-                    if (match) setSelectedTier(match.id)
-                    else setSelectedTier('seed')
+                    if (match){
+                      setSelectedTier(match.id)
+                        donationLink = "https://pay.annoyinglink.click/donate-" + amt
+                      } else {
+                      setSelectedTier('seed')
+                      donationLink = "https://pay.annoyinglink.click/"
+                      }
                   }}
                 >
                   ${amt}
@@ -122,7 +130,6 @@ export default function Donate() {
               />
             </div>
 
-            {/* Summary */}
             <div className="checkout-summary">
               <span>One-time donation</span>
               <span className="summary-amount">{displayAmount}</span>
@@ -132,6 +139,7 @@ export default function Donate() {
                 <span>Donate {displayAmount}</span>
                 <span className="donate-btn-icon">→</span>
             </a>
+            <br/>
             <p className="checkout-note">
               🔒 Encrypted & secure through GoDaddy Payments®️
             </p>

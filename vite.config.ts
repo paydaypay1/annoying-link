@@ -10,14 +10,31 @@ export default defineConfig({
     manifest: true,
     rollupOptions: {
       output: {
-        // Chunk vendor libraries separately for better caching 
-        manualChunks(id) {
-          if (id.includes('node_modules')) {
-            if (id.includes('react') || id.includes('react-dom')) {
-              return 'vendor';
-            }
-          }
-        }
+        codeSplitting: {
+          groups: [
+            {
+              name: 'common',
+              test: /node_modules/,
+              minSize: 100000, // 100KB
+              maxSize: 250000, // 250KB
+              priority: 10,
+            },
+          ],
+        },
+        // Chunk certain libraries separately for better caching 
+        // manualChunks(id) {
+        //   if (id.includes('node_modules')) {
+        //     if (id.includes('react') || id.includes('react-dom')) {
+        //       return 'vendor';
+        //     } else if ( id.includes('three') || id.includes('animate.css') ) {
+        //       return 'ui';
+        //     } else if ( id.includes('types') ) {
+        //       return 'types';
+        //     } else {
+        //       return 'misc';
+        //     }
+        //   }
+        // }
       }
     }
   },

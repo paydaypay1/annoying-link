@@ -15,11 +15,10 @@ const featureList: FeatureItem[] = [
 
 export default function Features() {
   return (
-    <div className="home">
+    <div className="home" style={{margin: {top: "10%"}}}>
       <center><h1>Features</h1></center>
       <hr/>
-      <div className="blob blob-teal">
-        <div className="cards">
+      <div className="cards">
           { featureList.map(feature => (
             <div className="card" key={feature.name}>
               <h2>{feature.name}</h2>
@@ -30,6 +29,5 @@ export default function Features() {
           ))}
         </div>
       </div>
-    </div>
   )
 }

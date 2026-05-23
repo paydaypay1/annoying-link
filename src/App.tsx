@@ -13,6 +13,7 @@ export default function App() {
     return (
       <div className="layout">
         <MainContent/>
+        <Footer/>
       </div>
     )
   } else {

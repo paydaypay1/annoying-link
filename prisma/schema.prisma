@@ -5,7 +5,7 @@
 
 generator client {
   provider = "prisma-client"
-  output   = "../src/generated/prisma"
+  output   = "../src/generated/"
 }
 
 datasource db {
@@ -13,8 +13,9 @@ datasource db {
 }
 
 model user_activity {
-  id String @id @default(cuid())  @db.VarChar(191)
-  request_url String @db.Text
+  id String @id @default(cuid())
+  request_url String
   visitAt DateTime @default(now())
-  ip_address String @db.VarChar(16)
+  anon_ip String
+  country String
 }

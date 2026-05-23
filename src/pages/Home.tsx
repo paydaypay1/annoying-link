@@ -93,6 +93,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <div className="home-footer-spacer" style={{margin: "100px"}} />
     </div>
   )
 }
