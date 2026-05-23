@@ -32,22 +32,3 @@ Output goes to `dist/`. Preview it locally with:
 ```bash
 npm run preview
 ```
-
-## Project Structure
-
-```
-my-static-site/
-├── public/            # Static assets (copied as-is to dist/)
-├── src/
-│   ├── components/    # Reusable React components
-│   ├── App.tsx        # Root component
-│   ├── App.css
-│   ├── main.tsx       # Entry point
-│   ├── index.css      # Global styles
-│   └── vite-env.d.ts  # Vite type shims
-├── index.html         # HTML shell
-├── vite.config.ts     # Vite config
-├── tsconfig.json      # TypeScript config
-├── nginx.conf         # nginx server config
-└── package.json
-```
