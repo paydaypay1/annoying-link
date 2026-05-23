@@ -5,16 +5,8 @@ import "./layout/Layout.css"
 
 import './shared/CommonElements.css'
 import './shared/Animations.css'
-import 'animate.css'
 
-//import Globals from '../config/Globals.tsx'
-//declare global globals = Globals()
-
-const featureRoutes = [
-  "/features/webdj",
-  "/features/browserlab"
-]
-const isMinimalView = (featureRoutes.includes(window.location.pathname))
+const isMinimalView = (window.location.pathname.startsWith('/features/'))
 
 export default function App() {
   if ( isMinimalView ){
