@@ -10,11 +10,11 @@ urls.length];
       v.muted = true; 
       v.playsInline = true; 
       v.crossOrigin = "anonymous";
-    
-      v.setAttribute("webkit-playsinline", "true");
-      v.width = 1280;
-      v.height = 720;
+      v.autoplay = true;    
 
+      v.play();
+      v.setAttribute("webkit-playsinline", "true");
+      
       this.videos.push(v);
     }
   }
