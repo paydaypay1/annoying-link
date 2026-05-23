@@ -15,7 +15,7 @@ const featureList: FeatureItem[] = [
 
 export default function Features() {
   return (
-    <div>
+    <div className="home">
       <center><h1>Features</h1></center>
       <hr/>
       <div className="blob blob-teal">
