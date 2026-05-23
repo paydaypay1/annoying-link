@@ -10,13 +10,16 @@ export default defineConfig({
     manifest: true,
     rollupOptions: {
       output: {
-        // Chunk vendor libraries separately for better caching
-        manualChunks: {
-          vendor: ['react', 'react-dom', 'express', 'compression'],
-        },
-      },
-    },
+        // Chunk vendor libraries separately for better caching 
+        manualChunks(id) {
+          if (id.includes('node_modules')) {
+            if (id.includes('react') || id.includes('react-dom')) {
+              return 'vendor';
+            }
+          }
+        }
+      }
+    }
   },
-  // Set to '/' for root hosting, or '/subpath/' if served from a subdirectory
   base: '/',
 })

@@ -1,0 +1,20 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Get a free hosted database in seconds: `npx create-db`
+
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "mysql"
+}
+
+model Link {
+  id String @id @default(cuid())  @db.VarChar(191)
+  request_url String @db.Text
+  visitAt DateTime @default(now())
+  ip_address String @db.VarChar(16)
+}
