@@ -12,7 +12,7 @@ datasource db {
   provider = "mysql"
 }
 
-model Link {
+model user_activity {
   id String @id @default(cuid())  @db.VarChar(191)
   request_url String @db.Text
   visitAt DateTime @default(now())

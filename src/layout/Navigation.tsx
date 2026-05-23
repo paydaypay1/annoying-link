@@ -1,7 +1,7 @@
-import { useState } from 'react'
+//import { useState } from 'react'
 
 export default function Navigation() {
-  const [darkMode, setDarkMode] = useState(true)
+  /*const [darkMode, setDarkMode] = useState(true)
   const [extraAnimations, setExtraAnimations] = useState(false)
   const [soundEffects, setSoundEffects] = useState(false)
   
@@ -14,6 +14,7 @@ export default function Navigation() {
   const toggleSoundEffects= () => {
     setSoundEffects(!soundEffects)
   }
+  */
   
   return(
     <div className="navigation">
@@ -22,9 +23,9 @@ export default function Navigation() {
       <ul>
         <li><a href="/">Home</a></li>
         <li><a href="/features">Features</a></li>
-        <li><a href="/features/webdj" target="_blank">  →Web DJ</a></li>
-        <li><a href="/features/spheregrid" target="_blank">  →Sphere Grid</a></li>
-        <li><a href="/features/browserlab" target="_blank">  →Browser Lab</a></li>
+        <li><a href="/features/webdj" target="_blank">  ???Web DJ</a></li>
+        <li><a href="/features/spheregrid" target="_blank">  ???Sphere Grid</a></li>
+        <li><a href="/features/browserlab" target="_blank">  ???Browser Lab</a></li>
         <li><a href="https://github.com/paydaypay1/annoying-link">GitHub</a></li>
         <li><a href="/donate">Donate</a></li>
       </ul>
