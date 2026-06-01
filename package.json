@@ -27,7 +27,7 @@
     "react-dom": "^19.2.6",
     "react-router-dom": "^7.15.1",
     "three": "^0.184.0",
-    "tsx": "^4.22.3"
+    "tsx": "^4.22.4"
   },
   "devDependencies": {
     "@types/react": "^19.2.15",
