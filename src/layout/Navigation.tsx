@@ -23,8 +23,8 @@ export default function Navigation() {
       <ul>
         <li><a href="/">Home</a></li>
         <li><a href="/features">Features</a></li>
-        <li><a href="/features/webdj" target="_blank">>>> Web DJ</a></li>
-        <li><a href="/features/browserlab" target="_blank">>>> Browser Lab</a></li>
+        <li><a href="/features/webdj" target="_blank">* Web DJ</a></li>
+        <li><a href="/features/browserlab" target="_blank">* Browser Lab</a></li>
         <li><a href="https://github.com/paydaypay1/annoying-link">GitHub</a></li>
         <li><a href="/donate">Donate</a></li>
       </ul>
