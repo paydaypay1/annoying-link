@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "start": "npx prisma migrate deployment && npm run build && node index.js",
+    "start": "npm run build && node index.js",
     "watch": "vite build --watch"
   },
   "dependencies": {

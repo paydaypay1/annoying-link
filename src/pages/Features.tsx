@@ -15,7 +15,7 @@ const featureList: FeatureItem[] = [
 
 export default function Features() {
   return (
-    <div className="home" style={{margin: {top: "10%"}}}>
+    <div className="home" style={{marginTop: "10%"}}>
       <center><h1>Features</h1></center>
       <hr/>
       <div className="cards">

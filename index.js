@@ -3,7 +3,7 @@ import compression from 'compression';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import crypto from 'crypto';
-import DB from './config/db.tsx';
+// import DB from './config/db';
 import ipCountry from 'ip-country';
 
 function hash(str) {
@@ -33,13 +33,13 @@ app.use(express.static(path.join(__dirname, 'dist')));
 
 // Routing passthrough to React Router
 app.get(/.*$/, async (req, res) => { 
-	await		prisma().user_activity.create({
-		data: {
-			request_url: req.originalUrl,
-			anon_ip: hash(req.ip),
-			country: ipCountry.country(req.ip)
-		},
-	});
+	// await prisma().user_activity.create({
+	// 	data: {
+	// 		request_url: req.originalUrl,
+	// 		anon_ip: hash(req.ip),
+	// 		country: ipCountry.country(req.ip)
+	// 	},
+	// });
 		res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
 
