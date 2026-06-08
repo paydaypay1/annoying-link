@@ -1,4 +1,3 @@
 node_modules
 .sail
 dist/
-package-lock.json
