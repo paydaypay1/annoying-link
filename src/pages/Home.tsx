@@ -60,7 +60,8 @@ export default function Home() {
                 <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </Link>
-            <a href="#about" className="btn btn-ghost">Learn more</a>
+            <br/>
+	    <a href="#about" className="btn btn-ghost">Learn more</a>
           </div>
         </div>
       </section>

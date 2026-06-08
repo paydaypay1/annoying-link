@@ -22,14 +22,14 @@
     "react-router-dom": "^7.15.1",
     "serve-favicon": "^2.5.1",
     "three": "^0.184.0",
-    "tsx": "^4.22.3"
+    "tsx": "^4.22.3",
+    "vite": "^8.0.16"
   },
   "devDependencies": {
     "@types/react": "^19.2.15",
     "@types/react-dom": "^19.2.3",
     "@types/three": "^0.184.1",
     "@vitejs/plugin-react": "^6.0.2",
-    "typescript": "^5.9.3",
-    "vite": "^8.0.13"
+    "typescript": "^5.9.3"
   }
 }
