@@ -5,6 +5,7 @@ import { fileURLToPath } from 'url';
 import crypto from 'crypto';
 // import DB from './config/db';
 import ipCountry from 'ip-country';
+import serveFavicon from 'serve-favicon';
 
 function hash(str) {
 	return crypto.createHash('md5').update(str).digest('hex');
@@ -30,6 +31,8 @@ app.use(express.urlencoded({ extended: true }));
 
 // Serve Vite's compiled static files from the 'dist' folder
 app.use(express.static(path.join(__dirname, 'dist')));
+// Initialize the middleware with the path to your icon file
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 
 // Routing passthrough to React Router
 app.get(/.*$/, async (req, res) => { 
