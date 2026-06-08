@@ -3,7 +3,7 @@ import compression from 'compression';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import crypto from 'crypto';
-import prisma from './config/db.tsx';
+import DB from './config/db.tsx';
 import ipCountry from 'ip-country';
 
 function hash(str) {

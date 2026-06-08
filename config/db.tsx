@@ -1,21 +1,17 @@
-import { PrismaClient } from "../src/generated/client";
-import { PrismaMariaDb } from "@prisma/adapter-mariadb";
-import { PrismaPg } from "@prisma/adapter-pg"
+import mysql from "mysql2/promise";
 
-var adapter;
-
-if (process.env.ENVIRONMENT === "production") {
-  adapter = new PrismaMariaDb({
+export async function dbExecute(sql: string, values: any[]){
+  const connection = await mysql.createConnection({
     host: process.env.DB_HOST,
-    port: Number(process.env.DB_PORT),
-    connectionLimit: 5,
+    port: Number(process.env.DB_PORT || "3306"),
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME,
   });
-} else {
-  adapter = new PrismaPg({
-    connectionString: process.env.DATABASE_URL,
-  });
-}
 
-export default function prisma(){
-  return new PrismaClient({ adapter });
+  try {
+    await connection.execute(sql, values);
+  } finally {
+    await connection.end();
+  }
 }
