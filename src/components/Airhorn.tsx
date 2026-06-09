@@ -1,5 +1,3 @@
-import React from 'react';
-
 export default function Airhorn() {
   // Path to the audio file
   const audioUrl = 'https://actions.google.com/sounds/v1/transportation/air_horn_in_close_hall_series.ogg';
