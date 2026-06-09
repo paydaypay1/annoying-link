@@ -18,7 +18,7 @@
     "ip-country": "^1.0.2",
     "mysql2": "^3.22.3",
     "react": "^19.2.6",
-    "react-dom": "^19.2.6",
+    "react-dom": "^19.2.7",
     "react-router-dom": "^7.15.1",
     "serve-favicon": "^2.5.1",
     "three": "^0.184.0",
