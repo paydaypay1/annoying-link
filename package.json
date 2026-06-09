@@ -17,7 +17,7 @@
     "express": "^5.2.1",
     "ip-country": "^1.0.2",
     "mysql2": "^3.22.3",
-    "react": "^19.2.6",
+    "react": "^19.2.7",
     "react-dom": "^19.2.6",
     "react-router-dom": "^7.15.1",
     "serve-favicon": "^2.5.1",
@@ -26,7 +26,7 @@
     "vite": "^8.0.16"
   },
   "devDependencies": {
-    "@types/react": "^19.2.15",
+    "@types/react": "^19.2.17",
     "@types/react-dom": "^19.2.3",
     "@types/three": "^0.184.1",
     "@vitejs/plugin-react": "^6.0.2",
