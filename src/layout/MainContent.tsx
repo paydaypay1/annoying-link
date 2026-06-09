@@ -5,6 +5,7 @@ import Features from '../pages/Features'
 import WebDJ from '../pages/features/WebDJ'
 import BrowserLab from '../pages/features/BrowserLab'
 import SphereViewer from '../pages/features/SphereViewer'
+import Demo from '../pages/Demo'
 
 export default function MainContent() {
   return (
@@ -16,6 +17,7 @@ export default function MainContent() {
         <Route path="/features/webdj" element={<WebDJ />} />
         <Route path="/features/browserlab" element={<BrowserLab />} />
         <Route path="/features/spheregrid" element={<SphereViewer />}  />
+        <Route path="/demo" element={<Demo />} />
       </Routes>
     </BrowserRouter>
   )

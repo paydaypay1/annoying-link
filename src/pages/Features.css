@@ -1,3 +1,10 @@
+.home {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
 cards {
   display: flex;
   flex-direction: column;

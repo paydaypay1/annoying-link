@@ -1,0 +1,20 @@
+.home {
+	margin-top: 60px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
+  padding-bottom: 10%;
+}
+
+iframe {
+	width: 60%;
+	aspect-ratio: 16/9;
+	border: none;
+}
+
+body {
+  background-color: hsl(var(--hue), 80%, 60%);
+  will-change: background-color; 
+  transition: background-color 0.1s linear;
+}
